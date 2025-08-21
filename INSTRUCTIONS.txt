@@ -1,0 +1,154 @@
+Project Replication Guide
+
+1. Overview
+
+This guide provides step-by-step instructions to replicate, set up, and run the React Native (TypeScript) project. The project includes screens, components, and assets needed to build a mobile application.
+
+2. Prerequisites
+
+Before starting, ensure you have the following installed on your system:
+
+2.1 Required Software
+
+Node.js (LTS version recommended) - Download Here
+
+npm (comes with Node.js) or yarn
+
+Git (optional for cloning the repository) - Download Here
+
+Expo CLI (if using Expo):
+
+npm install -g expo-cli
+
+Android Studio (for Android development) or Xcode (for iOS development)
+
+VS Code or any IDE (Recommended: VS Code with React Native extensions)
+
+2.2 Additional Dependencies
+
+If using physical devices, install Expo Go (for Expo projects) on your phone.
+
+Ensure adb (Android Debug Bridge) is configured for Android testing.
+
+3. Setting Up the Project
+
+3.1 Obtaining the Project
+
+Option 1: Extract from ZIP
+
+Download the project ZIP file.
+
+Extract it to your desired location.
+
+Open a terminal or command prompt and navigate to the project folder:
+
+cd path/to/a0-project
+
+Option 2: Clone from Git
+
+If the project is hosted on GitHub or another Git platform:
+
+  git clone <repository_url>
+  cd a0-project
+
+3.2 Installing Dependencies
+
+Run one of the following inside the project directory:
+
+Using npm:
+
+  npm install
+
+Using yarn:
+
+  yarn install
+
+4. Running the Project
+
+4.1 Start the Development Server
+
+For Expo Projects:
+
+  npx expo start
+
+This will launch an Expo developer tools interface.
+
+For React Native CLI Projects:
+
+Android Emulator/Device:
+
+  npx react-native run-android
+
+iOS Simulator (Mac Only):
+
+  npx react-native run-ios
+
+5. Project Structure
+
+/a0-project
+├── assets/                 # Images, icons, fonts
+├── components/             # Reusable UI components
+│   ├── VoiceConsultation.tsx
+├── screens/                # Different app screens
+│   ├── HomeScreen.tsx
+├── App.tsx                 # Main entry point
+├── package.json            # Project dependencies
+├── tsconfig.json           # TypeScript configuration
+├── index.ts                # Application bootstrap
+├── app.json                # Expo configuration
+├── .gitignore              # Files to ignore in Git
+└── README.md               # Project documentation
+
+6. Customization & Development
+
+6.1 Editing UI Components
+
+Modify files inside the components/ directory to change the UI elements.
+
+6.2 Adding New Screens
+
+Create a new file inside screens/.
+
+Define your React component.
+
+Import and link it in App.tsx.
+
+6.3 Modifying Assets
+
+Replace icons or images in the assets/ folder.
+
+7. Building for Production
+
+7.1 Generating APK (Android)
+
+  npx react-native run-android --variant=release
+
+7.2 Generating iOS Build
+
+(Mac and Xcode required)
+
+  npx react-native run-ios --configuration Release
+
+8. Troubleshooting
+
+8.1 Common Issues & Fixes
+
+Issue
+
+Solution
+
+"Module not found"
+
+Run npm install again
+
+Metro Bundler not starting
+
+Kill the process with Ctrl+C and restart
+
+Emulator not detected
+
+Ensure Android Studio is running with an emulator
+
+Expo not found
+
+Install it globally: npm install -g expo-cli
